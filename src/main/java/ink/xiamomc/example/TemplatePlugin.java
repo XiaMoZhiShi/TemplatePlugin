@@ -18,7 +18,7 @@ public final class TemplatePlugin extends XiaMoJavaPlugin
         return namespace;
     }
 
-    // In case you have some code that doesn't inherit the instance system, call instance().
+    // In case you have some code that doesn't fit into the instance system, call instance().
     // It's recommended to inherit the ExamplePluginObject so that you can access the plugin through the `plugin` field.
     private static TemplatePlugin instance;
     public static TemplatePlugin instance()

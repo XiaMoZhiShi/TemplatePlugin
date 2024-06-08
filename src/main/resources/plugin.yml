@@ -1,4 +1,0 @@
-name: TemplatePlugin
-version: '${version}'
-main: ink.xiamomc.example.TemplatePlugin
-api-version: '1.20'
