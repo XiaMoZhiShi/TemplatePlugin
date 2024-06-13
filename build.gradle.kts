@@ -79,20 +79,21 @@ bukkit {
     main = "ink.xiamomc.example.TemplatePlugin"
     apiVersion = "1.20"
     authors = listOf("AUTHOR1", "AUTHOR2")
-    depend = listOf("")
-    softDepend = listOf("")
+    depend = listOf()
+    softDepend = listOf()
     version = "${project.property("project_version")}"
     prefix = "TemplatePlugin"
     name = "TemplatePlugin"
 
     // True if this plugin supports folia.
-    foliaSupported = false
+    foliaSupported = true
 
     commands {
         register("example_command")
 
-        val featherMorphCommand = register("example2").get()
-        featherMorphCommand.aliases = listOf("ex2");
+        // You can use the following method to register a command with aliases
+        // val featherMorphCommand = register("example2").get()
+        // featherMorphCommand.aliases = listOf("ex2");
     }
 
     val permissionRoot = "template."

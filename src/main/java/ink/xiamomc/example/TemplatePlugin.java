@@ -1,5 +1,6 @@
 package ink.xiamomc.example;
 
+import ink.xiamomc.example.commands.ExampleCommandHelper;
 import org.bukkit.Bukkit;
 import xiamomc.pluginbase.XiaMoJavaPlugin;
 
@@ -32,12 +33,21 @@ public final class TemplatePlugin extends XiaMoJavaPlugin
         return namespace();
     }
 
+    // Not initializing here because the plugin isn't initialized
+    // If we create a new instance here, it will run before the plugin initialization
+    //
+    // Also keeping reference for this is not necessary, this is just a showcase.
+    private ExampleCommandHelper commandHelper;
+
     @Override
     public void onEnable()
     {
         super.onEnable();
 
         // Plugin startup logic here
+
+        // It will register commands automatically
+        dependencyManager.cache(commandHelper = new ExampleCommandHelper());
     }
 
     @Override
