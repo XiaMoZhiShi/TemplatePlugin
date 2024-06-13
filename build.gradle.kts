@@ -79,14 +79,14 @@ bukkit {
     main = "ink.xiamomc.example.TemplatePlugin"
     apiVersion = "1.20"
     authors = listOf("AUTHOR1", "AUTHOR2")
-    depend = listOf()
+    depend = listOf() // Example: listOf("depend1", "depend2")
     softDepend = listOf()
     version = "${project.property("project_version")}"
     prefix = "TemplatePlugin"
     name = "TemplatePlugin"
 
     // True if this plugin supports folia.
-    foliaSupported = true
+    foliaSupported = false
 
     commands {
         register("example_command")
