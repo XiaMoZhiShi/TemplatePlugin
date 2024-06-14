@@ -10,7 +10,8 @@ import java.util.List;
 public class ExampleCommandHelper extends CommandHelper<TemplatePlugin>
 {
     private final List<IPluginCommand> commands = List.of(
-            new ExampleCommand()
+            new ExampleCommand(),
+            new SubcommandHub()
     );
 
     @Override

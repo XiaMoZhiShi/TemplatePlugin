@@ -1,6 +1,8 @@
 package ink.xiamomc.example;
 
 import ink.xiamomc.example.commands.ExampleCommandHelper;
+import ink.xiamomc.example.config.ExampleConfigManager;
+import ink.xiamomc.example.config.ExampleConfigOptions;
 import org.bukkit.Bukkit;
 import xiamomc.pluginbase.XiaMoJavaPlugin;
 
@@ -47,7 +49,21 @@ public final class TemplatePlugin extends XiaMoJavaPlugin
         // Plugin startup logic here
 
         // It will register commands automatically
+        ExampleConfigManager configManager;
         dependencyManager.cache(commandHelper = new ExampleCommandHelper());
+        dependencyManager.cache(configManager = new ExampleConfigManager(this));
+
+        configManager.getBindable(ExampleConfigOptions.booleanValue)
+                .onValueChanged((oldVal, newVal) ->
+                {
+                    logger.info("Value changed! From '%s' to '%s'".formatted(oldVal, newVal));
+                });
+
+        configManager.getBindable(ExampleConfigOptions.booleanValue)
+                .onValueChanged((oldVal, newVal) ->
+                {
+                    logger.info("This action will trigger immediately! Value From '%s' to '%s'".formatted(oldVal, newVal));
+                }, true);
     }
 
     @Override

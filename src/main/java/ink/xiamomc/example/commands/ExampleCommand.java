@@ -37,6 +37,7 @@ public class ExampleCommand extends ExamplePluginObject implements IPluginComman
     @Override
     public FormattableMessage getHelpMessage()
     {
+        // You can leave this as `null` if you don't plan to display help messages
         return CommandStrings.exampleMessage();
     }
 

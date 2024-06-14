@@ -90,6 +90,7 @@ bukkit {
 
     commands {
         register("example_command")
+        register("example_command_2")
 
         // You can use the following method to register a command with aliases
         // val featherMorphCommand = register("example2").get()
