@@ -85,8 +85,8 @@ bukkit {
     prefix = "TemplatePlugin"
     name = "TemplatePlugin"
 
-    // True if this plugin supports folia.
-    foliaSupported = false
+    // False if this plugin is not designed for folia.
+    foliaSupported = true
 
     commands {
         register("example_command")
